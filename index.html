@@ -3,48 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <title>গ্রেড ক্যালকুলেটর</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: sans-serif;
-        text-align: center;
-        padding: 50px;
         background-color: rgb(212, 160, 197);
-        margin: 0 auto;
-        border: 20px groove rgb(38, 8, 228);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
+      header {
+        background-color: rgb(94, 20, 124);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        background-color: #fff;
+        text-align: center;
+        border: 5px groove rgb(38, 8, 228);
         border-radius: 30px;
       }
+
       input,
       button {
         padding: 10px;
         font-size: 18px;
         margin: 10px;
+        width: 100%;
+        max-width: 300px;
       }
+
       #result {
         font-size: 20px;
         color: green;
         margin-top: 20px;
       }
+
+      footer {
+        background-color: rgb(51, 11, 72);
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          margin: 10px;
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>(আসসালামু আলাইকুম)</h1>
-    <h1>📘 আপনার গ্রেড জানুন</h1>
+    <header>
+      <h1>📘 গ্রেড ক্যালকুলেটর</h1>
+    </header>
 
-    <input
-      type="number"
-      id="scoreInput"
-      placeholder="আপনার নম্বর লিখুন (০-১০০)"
-    />
-    <br />
-    <button onclick="calculateGrade()">ফলাফল দেখুন</button>
+    <main>
+      <h2>(আসসালামু আলাইকুম)</h2>
+      <p>আপনার নম্বর লিখে ফলাফল জানুন</p>
 
-    <div id="result"></div>
+      <input
+        type="number"
+        id="scoreInput"
+        placeholder="আপনার নম্বর লিখুন (০-১০০)"
+      />
+      <br />
+      <button onclick="calculateGrade()">ফলাফল দেখুন</button>
+
+      <div id="result"></div>
+    </main>
+
+    <footer>&copy; ২০২৫ | তৈরি করেছেন আপনার প্রিয় চান 🌙</footer>
 
     <script>
       function calculateGrade() {
         let score = parseInt(document.getElementById("scoreInput").value);
         let grade;
+
+        if (isNaN(score) || score < 0 || score > 100) {
+          document.getElementById("result").innerHTML =
+            "⚠️ দয়া করে ০ থেকে ১০০ এর মধ্যে একটি সঠিক নম্বর দিন!";
+          return;
+        }
 
         if (score >= 90) {
           grade = "🌟 GOLDEN A+ পেয়েছেন!";
