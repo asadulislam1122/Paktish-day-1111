@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>গ্রেড ক্যালকুলেটর</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: plum;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 18px;
+        margin: 10px;
+      }
+      #result {
+        font-size: 20px;
+        color: green;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📘 আপনার গ্রেড জানুন</h1>
+
+    <input
+      type="number"
+      id="scoreInput"
+      placeholder="আপনার নম্বর লিখুন (০-১০০)"
+    />
+    <br />
+    <button onclick="calculateGrade()">ফলাফল দেখুন</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateGrade() {
+        let score = parseInt(document.getElementById("scoreInput").value);
+        let grade;
+
+        if (score >= 90) {
+          grade = "🌟 GOLDEN A+ পেয়েছেন!";
+        } else if (score >= 80) {
+          grade = "🎉 A+ গ্রেড পেয়েছেন!";
+        } else if (score >= 70) {
+          grade = "👍 A গ্রেড পেয়েছেন!";
+        } else if (score >= 60) {
+          grade = "🙂 B গ্রেড পেয়েছেন!";
+        } else if (score >= 50) {
+          grade = "😐 C গ্রেড পেয়েছেন!";
+        } else if (score >= 33) {
+          grade = "😅 D গ্রেড পেয়েছেন!";
+        } else {
+          grade = "❌ আপনি ফেল করেছেন!";
+        }
+
+        document.getElementById("result").innerHTML =
+          "আপনার নম্বর: " + score + "<br>" + grade;
+      }
+    </script>
+  </body>
+</html>
