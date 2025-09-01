@@ -1,142 +1,324 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>গ্রেড ক্যালকুলেটর</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      /* facebook */
-      .facebook {
-        color: rgb(193, 206, 11);
-        padding-left: 10px;
-        text-decoration: none;
-        font-size: medium;
-        font-weight: 700;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: sans-serif;
-        background-color: rgb(212, 160, 197);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      header {
-        background-color: rgb(94, 20, 124);
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-
-      main {
-        flex: 1;
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 500px;
-        background-color: #fff;
-        text-align: center;
-        border: 5px groove rgb(38, 8, 228);
-        border-radius: 30px;
-      }
-
-      input,
-      button {
-        padding: 10px;
-        font-size: 18px;
-        margin: 10px;
-        width: 100%;
-        max-width: 300px;
-      }
-
-      #result {
-        font-size: 20px;
-        color: green;
-        margin-top: 20px;
-      }
-
-      footer {
-        background-color: rgb(51, 11, 72);
-        color: white;
-        text-align: center;
-        padding: 15px;
-      }
-
-      @media (max-width: 600px) {
-        main {
-          margin: 10px;
-          padding: 15px;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-      }
-    </style>
+    <title>My Website</title>
+    <!-- google font -->
+    <link rel="stylesheet" href="style/style.css" />
+    <!-- font osame -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- tailwind and desai way -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <header>
-      <h1>📘 গ্রেড ক্যালকুলেটর</h1>
-    </header>
+  <body class="bg-white">
+    <!-- navbar -->
+    <div class="navbar bg-base-100 shadow-sm bg-blue-300">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li><a>Item 1</a></li>
+            <li>
+              <a>Parent</a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl">daisyUI</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a>Item 1</a></li>
+          <li>
+            <details>
+              <summary>Parent</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a>Item 3</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn">Button</a>
+      </div>
+    </div>
 
+    <!-- main section -->
+    <!-- bg-slate-200 -->
     <main>
-      <h2>(আসসালামু আলাইকুম)</h2>
-      <p>আপনার নম্বর লিখে ফলাফল জানুন</p>
-
-      <input
-        type="number"
-        id="scoreInput"
-        placeholder="আপনার নম্বর লিখুন (০-১০০)"
-      />
-      <br />
-      <button onclick="calculateGrade()">ফলাফল দেখুন</button>
-
-      <div id="result"></div>
-    </main>
-
-    <footer>
-      &copy; ২০২৫ | Created by Prince Asadul
-      <a class="facebook" href="https://www.facebook.com/share/19mHKiAmzc/"
-        >(Facebook Id)</a
+      <section
+        class="md:flex justify-center items-center md:w-[1250px] m-auto p-4 mt-4 gap-[70px] rounded-4xl"
       >
-      <a class="facebook" href="https://www.google.com/">(Google)</a>
-    </footer>
+        <div>
+          <h1 class="font-hind font-semibold text-3xl">
+            Find Your Perfect Sunglasses
+          </h1>
+          <h4 class="font-hind font-semibold text-xl text-gray-500">
+            আপনার স্টাইলের সেরা সানগ্লাস
+          </h4>
+          <p class="font-hind mt-2 font-semibold text-2xl">
+            Discover the latest collection of premium sunglasses with UV
+            protection and stylish designs. Perfect for every season!
+          </p>
+          <p class="font-hind mt-2 font-semibold text-sm text-gray-500">
+            নতুন ট্রেন্ডি সানগ্লাস কালেকশন, যা দেবে স্টাইল আর চোখের সুরক্ষা
+            একসাথে। এখনই দেখে নিন!
+          </p>
+          <p class="font-hind font-semibold text-lg mt-3">
+            Our sunglasses are crafted to combine fashion with function. Each
+            pair features high-quality lenses with 100% UV protection and
+            durable frames designed for all-day comfort. Perfect for everyday
+            wear, travel, and outdoor adventures.
+          </p>
+          <p class="font-hind font-semibold text-sm mt-3">
+            আমাদের সানগ্লাসগুলো শুধু ফ্যাশনের জন্য নয়, বরং চোখকে ক্ষতিকর UV
+            রশ্মি থেকে সুরক্ষা দেয়। উচ্চমানের লেন্স ও আরামদায়ক ফ্রেমের সাথে
+            প্রতিটি ডিজাইন তৈরি করা হয়েছে আধুনিক স্টাইল মাথায় রেখে। দৈনন্দিন
+            ব্যবহার থেকে শুরু করে ভ্রমণ—সব জায়গায় আপনার জন্য পারফেক্ট।
+          </p>
+          <button class="btn btn-primary w-[130px] mt-4">Primary</button>
+        </div>
+        <div class="">
+          <img class="mt-4 h-fit w-[700px]" src="./Images/meye 6.webp" alt="" />
+        </div>
+      </section>
 
-    <script>
-      function calculateGrade() {
-        let score = parseInt(document.getElementById("scoreInput").value);
-        let grade;
-
-        if (isNaN(score) || score < 0 || score > 100) {
-          document.getElementById("result").innerHTML =
-            "⚠️ দয়া করে ০ থেকে ১০০ এর মধ্যে একটি সঠিক নম্বর দিন!";
-          return;
-        }
-
-        if (score >= 90) {
-          grade = "🌟 GOLDEN A+ পেয়েছেন!";
-        } else if (score >= 80) {
-          grade = "🎉 A+ গ্রেড পেয়েছেন!";
-        } else if (score >= 70) {
-          grade = "👍 A গ্রেড পেয়েছেন!";
-        } else if (score >= 60) {
-          grade = "🙂 B গ্রেড পেয়েছেন!";
-        } else if (score >= 50) {
-          grade = "😐 C গ্রেড পেয়েছেন!";
-        } else if (score >= 33) {
-          grade = "😅 D গ্রেড পেয়েছেন!";
-        } else {
-          grade = "❌ আপনি ফেল করেছেন!";
-        }
-
-        document.getElementById("result").innerHTML =
-          "আপনার নম্বর: " + score + "<br>" + grade;
-      }
-    </script>
+      <!-- card -->
+      <section
+        class="grid md:grid-cols-3 gap-[30px] md:w-[1200px] bg-slate-600 border-2 mt-5 p-6 m-auto"
+      >
+        <!-- card 1 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/meya 2.png"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/meye 3.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/sun gluss 2.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 4 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/meye 5.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 5 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img class="w-[400px]" src="./Images/meya 1.jpg" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 6 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/sun gluss 1.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 7 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[363px]"
+                src="./Images/meye 11.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 8 -->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/meye 13.jpg"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 9-->
+        <div>
+          <div class="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                class="w-[400px]"
+                src="./Images/meye 14.webp"
+                alt="Sun Gluss"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Card Title</h2>
+              <p>
+                A card component has a figure, a body part, and inside body
+                there are title and actions parts
+              </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
